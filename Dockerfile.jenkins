@@ -1,0 +1,13 @@
+FROM jenkins/jenkins:lts
+
+# Switch to root user to install dependencies
+USER root
+
+# Install additional packages required for node.js build & testing
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+  apt-get update && \
+  apt-get dist-upgrade -y && \
+  apt-get install -y build-essential nodejs
+
+# Switch back to jenkins user
+USER jenkins
