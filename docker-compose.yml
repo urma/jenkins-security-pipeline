@@ -1,7 +1,7 @@
 version: '3'
 services:
-  # Jenkins master/UI running Blue Ocean
-  # TODO: Pre-load all plugins
+  # Jenkins master/UI running custom Jenkins LTS
+  # TODO: Pre-load all plugins (via /var/jenkins_home)
   jenkins-master:
     image: psc/jenkins:latest
     ports:
